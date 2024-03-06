@@ -1,0 +1,242 @@
+@font-face {
+    font-family: "Outfit";
+    font-display: swap;
+    font-weight: 100 900;
+    src: url('assets/fonts/outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Young Serif";
+    src: url('assets/fonts/young-serif/YoungSerif-Regular.ttf');
+}
+
+:root {
+    /* Font family */
+    --ff-sans: "Outfit", sans-serif;
+    --ff-serif: "Young Serif", serif;
+
+    /* Font sizes */
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.875rem;
+    --fs-base: 1rem;
+    --fs-lg: 1.125rem;
+    --fs-xl: 1.25rem;
+    --fs-2xl: 1.5rem;
+    --fs-3xl: 1.875rem;
+    --fs-4xl: 2.25rem;
+    --fs-5xl: 3rem;
+    --fs-6xl: 3.75rem;
+
+    /* Font weights */
+    --fw-r: 400;
+    --fw-sb: 600;
+    --fw-b: 700;
+
+    /* COLORS */
+    /* Primary */
+    --clr-primary-nutmeg: hsl(14, 45%, 36%);
+    --clr-primary-dark-raspberry: hsl(332, 51%, 32%);
+    /* Neutral */
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-neutral-rose-white: hsl(330, 100%, 98%);
+    --clr-neutral-eggshell: hsl(30, 54%, 90%);
+    --clr-neutral-light-grey: hsl(30, 18%, 87%);
+    --clr-neutral-wenge-brown: hsl(30, 10%, 34%);
+    --clr-neutral-dark-charcoal: hsl(24, 5%, 18%);
+}
+
+/* General */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    font: inherit;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+html {
+    font-family: var(--ff-sans);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-r);
+    line-height: 1.5;
+    color: var(--clr-neutral-wenge-brown);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.1;
+}
+
+h1,
+h3 {
+    font-family: var(--ff-serif);
+}
+
+h3 {
+    color: var(--clr-primary-nutmeg);
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-r);
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+body {
+    background-color: var(--clr-neutral-eggshell);
+}
+
+main {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+
+/* Utilities */
+.custom-bullet {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-b);
+    margin-block-end: .25em;
+    color: var(--primary-container-color);
+}
+
+.fw-sb {
+    font-weight: var(--fw-sb);
+}
+
+
+.border-bottom-gray {
+    border-bottom: 1px solid var(--clr-neutral-light-grey);
+}
+
+/* Common layouts */
+.layout-flex-li-ul {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.layout-flex-li-ol {
+    display: flex;
+    gap: 1.5em;
+}
+
+.layout-flex-ul-ol {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.recipe-ingredients,
+.recipe-instructions,
+.recipe-nutrition {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    padding-block: 1.5em;
+}
+
+/* RECIPE CONTAINER */
+.recipe-container {
+    max-width: 755px;
+    background-color: var(--clr-neutral-white);
+    border-radius: 20px;
+}
+
+/* RECIPE DESCRIPTION */
+.recipe-description {
+    width: 82.9%;
+    margin-inline: auto;
+}
+
+/* Recipe title and overview */
+.recipe-title-overview {
+    padding-block: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    /* color: var; */
+}
+
+h1 {
+    font-size: var(--fs-3xl);
+    color: var(--clr-neutral-dark-charcoal);
+}
+
+/* Recipe preparation time */
+.recipe-preparation-time {
+    --primary-container-color: var(--clr-primary-dark-raspberry);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background-color: var(--clr-neutral-rose-white);
+    padding: 1.5em;
+    padding-inline-end: 2em;
+    border-radius: 5px;
+}
+
+h2 {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-sb);
+    color: var(--primary-container-color);
+}
+
+/* Recipe ingredientes */
+.recipe-ingredients {
+    --primary-container-color: var(--clr-primary-nutmeg);
+}
+
+/* Recipe instructions */
+.recipe-instructions {
+    --primary-container-color: var(--clr-primary-nutmeg);
+}
+
+.recipe-instructions ol li>span {
+    color: var(--primary-container-color);
+}
+
+/* Recipe nutrition */
+.nutrition-table {
+    --primary-container-color: var(--clr-primary-nutmeg);
+}
+
+.nutrition-table>div {
+    display: flex;
+    padding-inline-start: 2em;
+    padding-block: .5em;
+}
+
+.nutrition-table>div>span {
+    width: 50%;
+}
+
+.nutrition-table>div>span:nth-child(2) {
+    color: var(--primary-container-color);
+}
+
+@media screen and (min-width: 600px) {
+    .recipe-image {
+        max-width: 82.9%;
+        margin-inline: auto;
+        border-radius: 20px;
+        margin-top: 3.5em;
+    }
+
+    /* .recipe-container {
+        margin-block-start: 3em;
+    } */
+}
